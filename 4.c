@@ -1,36 +1,46 @@
 #include <stdio.h>
 int main(int argc, const char* argv[]) {
-    int a,b,i = 0;        //a - высота, b - ширина
-    scanf("%d", &a);
-    scanf("%d", &b);
-    int k = 2;
+    int a, b = 1, c = 2;
+    printf("Введите высоту равнобедренного треугольника: ");
+    scanf("%d",&a);
+    while (b < (a / 2 + 1)){
+        printf(" ");
+        b++;
+    }
     printf("^\n");
-    a --;
-    while (a  > 1){
-        printf("^");
-        while (i+1 <= k){
+    while (c < a / 2 + 1){
+        b = 1;
+        while (b <= (a / 2 + 1 - c)){
             printf(" ");
-            i ++;
+            b++;
+        }
+        printf("^");
+        b = 1;
+        while (b <= ((c - 1) * 2 - 1)){
+            printf(" ");
+            b++;
         }
         printf("^\n");
-        a--;
-        k += 2;
-        i = 0;
+        c++;
     }
-    while (b > 0){
-        printf("^ ");
-        b--;
+    b = 1;
+    if (a % 2 == 0) {
+        while (b <= a + 1) {
+            printf("^");
+            b++;
+        }
+    } else {
+        while (b <= a) {
+            printf("^");
+            b++;
+        }
     }
     return 0;
 }
+
 /*
- *  ^
- *  ^ ^
- *  ^   ^
- *a ^     ^
- *  ^       ^
- *  ^         ^
- *  ^           ^
- *  ^ ^ ^ ^ ^ ^ ^ ^
- *        b
-*/
+ *           ^
+ *          ^ ^
+ *         ^   ^
+ *        ^     ^
+ *       ^^^^^^^^^
