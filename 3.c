@@ -9,6 +9,6 @@ int main(int argc, const char* argv[]) {
         sum += n;
         i ++;
     }
-    printf("Среднее арифметическое введённых чисел = %f",(double)sum / 10.0 );
+    printf("Среднее арифметическое введённых чисел = %.1f",(double)sum / 10.0 );
     return 0;
 }
